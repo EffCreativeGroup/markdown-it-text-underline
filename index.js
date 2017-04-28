@@ -2,9 +2,13 @@ module.exports = function underlinePlugin(md) {
   // Insert each marker as a separate text token, and add it to delimiter list
   //
   function tokenize(state, silent) {
-    var i, scanned, token, len, ch,
-      start = state.pos,
-      marker = state.src.charCodeAt(start);
+    var i, scanned, token, len, ch;
+    var start = state.pos;
+    var marker = state.src.charCodeAt(start);
+
+    if (state.src.charCodeAt(start) !== 0x2B/* + */) {
+      return false;
+    }
 
     if (silent) {
       return false;
@@ -47,19 +51,18 @@ module.exports = function underlinePlugin(md) {
   // Walk through delimiter list and replace text tokens with tags
   //
   function postProcess(state) {
-    var i, j,
-      startDelim,
-      endDelim,
-      token,
-      loneMarkers = [],
-      delimiters = state.delimiters,
-      max = state.delimiters.length;
+    var i, j, startDelim, endDelim, token;
+    var loneMarkers = [];
+    var delimiters = state.delimiters;
+    var max = state.delimiters.length;
 
     for (i = 0; i < max; i++) {
       startDelim = delimiters[i];
+
       if (startDelim.marker !== 0x2B/* + */) {
         continue;
       }
+
       if (startDelim.end === -1) {
         continue;
       }
