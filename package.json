@@ -1,0 +1,23 @@
+{
+  "name": "markdown-it-text-underline",
+  "version": "1.0.0",
+  "description": "Provides underline text for markdown-it",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EffCreativeGroup/markdown-it-text-underline.git"
+  },
+  "keywords": [
+    "markdown-it-plugin",
+    "markdown-it",
+    "markdown",
+    "text",
+    "underline"
+  ],
+  "author": "EffCreativeGroup",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/EffCreativeGroup/markdown-it-text-underline/issues"
+  },
+  "homepage": "https://github.com/EffCreativeGroup/markdown-it-text-underline#readme"
+}
