@@ -1,6 +1,6 @@
 {
   "name": "markdown-it-text-underline",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Provides underline text for markdown-it",
   "main": "index.js",
   "repository": {
